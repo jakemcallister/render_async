@@ -117,6 +117,7 @@
   <% end %>
 
   <% if turbolinks && !toggle %>
+    alert("turbolinks");
   document.addEventListener("pjax:load", function (e) {
     e.target.removeEventListener(e.type, arguments.callee);
     _renderAsyncFunction();
