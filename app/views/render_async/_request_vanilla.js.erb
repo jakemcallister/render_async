@@ -118,7 +118,8 @@
 
   <% if turbolinks && !toggle %>
     alert("turbolinks");
-  document.addEventListener("pjax:load", function (e) {
+  document.addEventListener("pjax:complete", function (e) {
+    alert("PJAX ENDturbolinks");
     e.target.removeEventListener(e.type, arguments.callee);
     _renderAsyncFunction();
   });
