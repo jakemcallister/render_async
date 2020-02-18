@@ -117,7 +117,7 @@
   <% end %>
 
   <% if turbolinks && !toggle %>
-    alert("turbolinks");
+    alert("turbolinks2");
   document.addEventListener("pjax:complete", function (e) {
     alert("PJAX ENDturbolinks");
     e.target.removeEventListener(e.type, arguments.callee);
