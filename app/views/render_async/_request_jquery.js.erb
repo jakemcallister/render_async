@@ -98,7 +98,10 @@ if (window.jQuery) {
     <% if turbolinks && !toggle %>
     $(document).one('turbolinks:load', _renderAsyncFunction);
     <% elsif !toggle %>
-    $(document).ready(_renderAsyncFunction);
+      $(document).on('pjax:end', function() {
+        console.log("RenderAsync PJAX end fired");
+        _renderAsyncFunction();
+      });
     <% end %>
   }(jQuery));
 } else {
