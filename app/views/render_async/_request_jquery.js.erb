@@ -99,7 +99,7 @@ if (window.jQuery) {
     <% if turbolinks && !toggle %>
     $(document).one('turbolinks:load', _renderAsyncFunction);
     <% elsif !toggle %>
-      $(document).on('pjax:end', function() {
+      $(document).on('pjax:end ready', function() {
         console.log("RenderAsync PJAX end fired");
         _renderAsyncFunction();
       });
